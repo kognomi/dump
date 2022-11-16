@@ -14,22 +14,18 @@ public class MyFirstProgram {
         Square s =new Square(9);
        // s.l=6;
         double len=5;
-        System.out.println(area(s));
+        System.out.println(s.area());
         Rectangle r=new Rectangle(10,11);
         //r.a=4;
         //r.b=5;
         double a=2;
         double b=3;
-        System.out.println(area(r));
+        System.out.println(r.area());
     }
 
     public static void hello(String somebody) {
         System.out.println("Hello "+somebody);
     }
-    public static double area(Square s){
-        return s.l*s.l;
-    }
-    public static double area (Rectangle r){
-        return r.a*r.b;
-    }
+
+
 }
