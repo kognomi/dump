@@ -9,16 +9,17 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class ContactCreationTests extends TestBase {
-
+public class GroupDeletionTests extends TestBase {
 
   @Test
-  public void testContactCreation() {
-    goToContactCreationPage();
-    fillContactForm(new ContactData("firstname", "middlename", "lastname", "address", "111", "222", "333", "1@mail.r", "2@mail.r", "3@mail.r"));
-    submitContactCreation();
-    returnToHomePage();
-  }
+  public void testGroupDeletion(){
+    goToGroupPage();
+    wd.findElement(By.name("selected[]")).click();
+    wd.findElement(By.name("delete")).click();
+    returnToGroupPage();
+
+}
+
 
 
 }
