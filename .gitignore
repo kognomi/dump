@@ -3,7 +3,7 @@
 /sandbox/.gradle
 /sandbox/build/
 /addressbook-web-tests/app/build/
-addressbook-web-tests/app/build
+addressbook-web-tests/app/build/*
 
 # Ignore Gradle GUI config
 gradle-app.setting
