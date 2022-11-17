@@ -9,6 +9,7 @@ import java.time.Duration;
 
 public class ApplicationManager {
   FirefoxDriver wd;
+  private  NavigationHelper navigationHelper;
   private  ContactHelper contactHelper;
   private  GroupHelper groupHelper;
 
@@ -21,10 +22,6 @@ public class ApplicationManager {
     }
   }
 
-  public void goToGroupPage() {
-    wd.findElement(By.linkText("groups")).click();
-  }
-
   public void login(String login, String password) {
     wd.findElement(By.name("user")).click();
     wd.findElement(By.name("user")).clear();
@@ -35,16 +32,13 @@ public class ApplicationManager {
     wd.findElement(By.xpath("//form[@id='LoginForm']/input[3]")).click();
   }
 
-  public void goToContactCreationPage() {
-    wd.findElement(By.linkText("add new")).click();
-  }
-
   public void init() {
     wd = new FirefoxDriver(new FirefoxOptions().setBinary("C:/Program Files/Mozilla Firefox/firefox.exe"));
     wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
     wd.get("http://localhost/addressbook/");
     groupHelper = new GroupHelper(wd);
     contactHelper = new ContactHelper(wd);
+    navigationHelper = new NavigationHelper(wd);
     login("admin", "secret");
   }
 
@@ -58,5 +52,9 @@ public class ApplicationManager {
 
   public ContactHelper getContactHelper() {
     return contactHelper;
+  }
+
+  public NavigationHelper getNavigationHelper() {
+    return navigationHelper;
   }
 }
