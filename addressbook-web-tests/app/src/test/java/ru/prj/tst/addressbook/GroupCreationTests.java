@@ -20,18 +20,11 @@ public class GroupCreationTests {
 
   @BeforeMethod
   public void setup()  throws Exception {
-    //WebDriverManager.chromedriver().setup();
-    //WebDriver wd = new ChromeDriver();
-    //WebDriverManager.firefoxdriver().setup();
+
     wd = new FirefoxDriver(new FirefoxOptions().setBinary("C:/Program Files/Mozilla Firefox/firefox.exe"));
     wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
-    
-  }
-  @Test
-  public void testGroupCreation() {
 
     wd.get("http://localhost/addressbook/");
-
     wd.findElement(By.name("user")).click();
     wd.findElement(By.name("user")).clear();
     wd.findElement(By.name("user")).sendKeys("admin");
@@ -39,6 +32,10 @@ public class GroupCreationTests {
     wd.findElement(By.name("pass")).clear();
     wd.findElement(By.name("pass")).sendKeys("secret");
     wd.findElement(By.xpath("//form[@id='LoginForm']/input[3]")).click();
+  }
+  @Test
+  public void testGroupCreation() {
+
     wd.findElement(By.linkText("groups")).click();
     wd.findElement(By.name("new")).click();
     wd.findElement(By.name("group_name")).click();
@@ -53,7 +50,7 @@ public class GroupCreationTests {
     wd.findElement(By.name("submit")).click();
     wd.findElement(By.linkText("group page")).click();
 
-    //wd.quit();
+
   }
   @AfterMethod
   public  void tearDown(){
