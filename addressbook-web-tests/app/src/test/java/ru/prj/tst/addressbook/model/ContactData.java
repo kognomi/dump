@@ -1,4 +1,4 @@
-package ru.prj.tst.addressbook;
+package ru.prj.tst.addressbook.model;
 
 import org.openqa.selenium.By;
 

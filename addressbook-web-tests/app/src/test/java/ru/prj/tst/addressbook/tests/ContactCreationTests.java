@@ -1,6 +1,7 @@
-package ru.prj.tst.addressbook;
+package ru.prj.tst.addressbook.tests;
 
 import org.testng.annotations.Test;
+import ru.prj.tst.addressbook.model.ContactData;
 
 public class ContactCreationTests extends TestBase {
 

@@ -1,7 +1,8 @@
-package ru.prj.tst.addressbook;
+package ru.prj.tst.addressbook.tests;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import ru.prj.tst.addressbook.appmanager.ApplicationManager;
 
 public class TestBase {
 
