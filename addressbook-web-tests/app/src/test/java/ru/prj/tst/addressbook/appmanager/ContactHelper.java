@@ -2,7 +2,7 @@ package ru.prj.tst.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
 import ru.prj.tst.addressbook.model.ContactData;
 
 public class ContactHelper extends HelperBase{
@@ -23,7 +23,9 @@ public class ContactHelper extends HelperBase{
     type(By.name("email"),contactData.getEmail());
     type(By.name("email2"),contactData.getEmail2());
     type(By.name("email3"),contactData.getEmail3());
-
+    if (isElementPresent(By.name("new_group"))) {
+      new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+    }
   }
 
   public void submitContactCreation() {
