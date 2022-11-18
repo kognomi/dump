@@ -16,16 +16,18 @@ public class ApplicationManager {
   private  ContactHelper contactHelper;
   private  GroupHelper groupHelper;
   private  SessionHelper sessionHelper;
+  private String browser;
 
+  public ApplicationManager(String browser) {
 
-
+    this.browser = browser;
+  }
 
 
   public void init() {
     String browser= Browser.FIREFOX.browserName();
     if (browser==Browser.FIREFOX.browserName()) {
       wd = new FirefoxDriver(new FirefoxOptions().setBinary("C:/Program Files/Mozilla Firefox/firefox.exe"));
-
     } else if (browser==Browser.CHROME.browserName()) {
       wd = new ChromeDriver();
     } else if (browser == Browser.EDGE.browserName()) {

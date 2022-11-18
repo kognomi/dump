@@ -1,5 +1,6 @@
 package ru.prj.tst.addressbook.tests;
 
+import org.openqa.selenium.remote.Browser;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import ru.prj.tst.addressbook.appmanager.ApplicationManager;
@@ -7,7 +8,7 @@ import ru.prj.tst.addressbook.appmanager.ApplicationManager;
 public class TestBase {
 
 
-  protected final ApplicationManager app = new ApplicationManager();
+  protected final ApplicationManager app = new ApplicationManager(Browser.FIREFOX.browserName());
 
   @BeforeMethod
   public void setup()  throws Exception {
