@@ -8,7 +8,7 @@ import ru.prj.tst.addressbook.appmanager.ApplicationManager;
 public class TestBase {
 
 
-  protected final ApplicationManager app = new ApplicationManager(Browser.EDGE.browserName());
+  protected final ApplicationManager app = new ApplicationManager(Browser.CHROME.browserName());
 
   @BeforeMethod
   public void setup()  throws Exception {
