@@ -18,8 +18,7 @@ public class Equation {
     if (a==0) {
       System.out.println("это вырожденное уравнение");
     }
-
-
+    
     double d=b*b-4*a*c;
     if (d>0) {
      n=2;
