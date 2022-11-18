@@ -15,24 +15,21 @@ public class Equation {
     this.b = b;
     this.c = c;
 
-    if (a==0) {
-      System.out.println("это вырожденное уравнение");
-    }
-    
     double d=b*b-4*a*c;
-    if (d>0) {
-     n=2;
-   }
-    if (d == 0) {
+
+    if (a==0) {
+      n=1;
+    } else {
+      if (d>0) {
+        n=2;
+      } else if (d == 0) {
         n = 1;
-    }
-    if (d<0) {
+      } else {
         n = 0;
+      }
     }
 
 
-
-   }
 
    public int rootNumber() {
     return n;
