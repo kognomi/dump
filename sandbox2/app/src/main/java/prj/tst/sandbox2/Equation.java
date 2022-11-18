@@ -15,6 +15,9 @@ public class Equation {
     this.b = b;
     this.c = c;
 
+    if (a==0) {
+      System.out.println("это вырожденное уравнение");
+    }
 
 
     double d=b*b-4*a*c;
