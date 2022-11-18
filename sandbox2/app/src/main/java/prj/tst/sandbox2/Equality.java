@@ -4,7 +4,7 @@ public class Equality {
  public static void main(String[] args) {
 
    String s1="firefox 2.0";
-  // String s2= "firefox "+Math.sqrt(4.0);//такое компилятор не осилит
+   String s2= "firefox "+Math.sqrt(4.0);//такое компилятор не осилит
 //String s2="firefox"; // компилятор оптимизирует код и ссылает на один и тот же объект
    //String s2="fire"+"fox";// компилятор снова догадывается
    //String s2=s1; .. так копируется ссылка на объект s1
