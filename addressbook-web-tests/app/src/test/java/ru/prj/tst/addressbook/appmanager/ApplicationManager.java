@@ -1,12 +1,17 @@
 package ru.prj.tst.addressbook.appmanager;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.Browser;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.time.Duration;
 
 public class ApplicationManager {
-  FirefoxDriver wd;
+  WebDriver wd;
   private  NavigationHelper navigationHelper;
   private  ContactHelper contactHelper;
   private  GroupHelper groupHelper;
@@ -17,7 +22,16 @@ public class ApplicationManager {
 
 
   public void init() {
-    wd = new FirefoxDriver(new FirefoxOptions().setBinary("C:/Program Files/Mozilla Firefox/firefox.exe"));
+    String browser= Browser.FIREFOX.browserName();
+    if (browser==Browser.FIREFOX.browserName()) {
+      wd = new FirefoxDriver(new FirefoxOptions().setBinary("C:/Program Files/Mozilla Firefox/firefox.exe"));
+
+    } else if (browser==Browser.CHROME.browserName()) {
+      wd = new ChromeDriver();
+    } else if (browser == Browser.EDGE.browserName()) {
+      wd = new EdgeDriver();
+    }
+
     wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
     wd.get("http://localhost/addressbook/");
     groupHelper = new GroupHelper(wd);
