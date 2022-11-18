@@ -25,7 +25,6 @@ public class ApplicationManager {
 
 
   public void init() {
-    String browser= Browser.FIREFOX.browserName();
     if (browser==Browser.FIREFOX.browserName()) {
       wd = new FirefoxDriver(new FirefoxOptions().setBinary("C:/Program Files/Mozilla Firefox/firefox.exe"));
     } else if (browser==Browser.CHROME.browserName()) {
