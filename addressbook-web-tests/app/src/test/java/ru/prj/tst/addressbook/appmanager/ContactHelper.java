@@ -64,4 +64,14 @@ click(By.xpath("//*[@id=\"maintable\"]/tbody/tr[2]/td[8]/a/img"));
   public void confirmContactModification() {
     click(By.name("update"));
   }
+
+  public boolean isThereAContact() {
+    return isElementPresent(By.name("selected[]"));
+  }
+
+  public void createContact(ContactData contact) {
+    fillContactForm(contact,true);
+    submitContactCreation();
+    returnToHomePage();
+  }
 }
