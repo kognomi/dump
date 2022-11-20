@@ -1,6 +1,7 @@
 package prj.tst.sandbox2;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Collections {
@@ -22,6 +23,8 @@ public class Collections {
     languages.add("C#");
     languages.add("Python");
     languages.add("PHP");
+
+    List<String> languagesFromArray = Arrays.asList("Java","C#" ,"Python", "PHP");
 
     for (String l:languages){
       System.out.println("хочу выучить " + l);
