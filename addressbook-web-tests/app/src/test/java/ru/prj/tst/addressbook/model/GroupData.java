@@ -1,5 +1,7 @@
 package ru.prj.tst.addressbook.model;
 
+import java.util.Objects;
+
 public class GroupData {
   public String name;
   public String header;
@@ -22,6 +24,26 @@ public class GroupData {
   public String getFooter() {
     return footer;
   }
+
+  @Override
+  public String toString() {
+    return "GroupData{" +
+            "name='" + name + '\'' +
+            '}';
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    GroupData groupData = (GroupData) o;
+
+    return Objects.equals(name, groupData.name);
+  }
+
+  @Override
+  public int hashCode() {
+    return name != null ? name.hashCode() : 0;
+  }
 }
-//public record GroupData(String name, String header, String footer) {
-//}
