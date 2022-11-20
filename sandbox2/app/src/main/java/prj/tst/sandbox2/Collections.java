@@ -26,10 +26,16 @@ public class Collections {
 
     List<String> languagesFromArray = Arrays.asList("Java","C#" ,"Python", "PHP");
 
-    for (String l:languages){
+    for (String l:languagesFromArray){  // цикл по элементам списка
       System.out.println("хочу выучить " + l);
     }
 
+
+    for(int i=0;i<languages.size();i++){//цикл по списку через счетчик
+
+      System.out.println("хочу выучить " + languages.get(i));
+
+    }
 
 
   }
