@@ -33,7 +33,7 @@ public class GroupData {
   }
 
   @Override
-  public boolean equals(Object o) {
+  public boolean equals(Object o) { //работало и без этого, но т.к. сравниваем только часть списка, то лучше генерить
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
 
