@@ -37,6 +37,13 @@ public class Collections {
 
     }
 
+    List languagesFree = Arrays.asList("Java","C#" ,"Python", "PHP");
+
+    for (Object l:languagesFree){  // цикл по элементам списка
+      System.out.println("хочу выучить " + l);
+    }
+
+
 
   }
 
