@@ -1,6 +1,5 @@
 package ru.prj.tst.addressbook.tests;
 
-import com.beust.ah.A;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.prj.tst.addressbook.model.GroupData;
@@ -13,7 +12,7 @@ public class GroupDeletionTests extends TestBase {
   public void testGroupDeletion(){
     app.getNavigationHelper().goToGroupPage();
     if (!app.getGroupHelper().isThereAGroup()) {
-      app.getGroupHelper().createGroup(new GroupData("test1", null, null));
+      app.getGroupHelper().createGroup(new GroupData( "test1", null, null));
     }
     List<GroupData> before = app.getGroupHelper().getGroupList();
     app.getGroupHelper().selectGroup(before.size()-1);
